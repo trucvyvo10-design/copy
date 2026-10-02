@@ -58,31 +58,14 @@ To balance compliance workload constraints against AML risk exposure, the engine
 
 ```text
 Bitcoin-AML-OnChain-Forensics-Pipeline/
-├── README.md                           <- Main Enterprise Case Study documentation
-├── requirements.txt                    <- Dependencies for local and Streamlit Cloud runtime
+├── README.md                           <- Enterprise Case Study documentation & Open-Source guide
+├── requirements.txt                    <- Python environment dependencies
 ├── Dockerfile                          <- Containerization config for enterprise deployment
-├── 04_Python_Automation/
-│   └── app_risk_dashboard.py           <- Streamlit Interactive AML Risk Dashboard
-├── docs/
-│   └── alert_precision_threshold_curve.png <- Generated compliance threshold optimization chart
-├── notebooks/
-│   └── bitcoin_aml_forensics.py        <- Temporal split, RF training, and evaluation script
-└── scripts/
-    └── train_aml_model.py              <- Core model pipeline execution script
-```
-
-## Live Dashboard & Deployment
-
-The interactive dashboard is deployed via Streamlit Community Cloud:
-* **Alert Investigation Queue:** Filtered by customizable Risk Score cutoffs.
-* **Graph Topology Metrics:** Inbound/Outbound degree attributes per transaction node.
-* **Operational Capacity Slider:** Adjust alert thresholds dynamically to match daily compliance audit limits.
-
-### Local Installation
-
-```bash
-git clone [https://github.com/trucvyvo10-design/Bitcoin-AML-OnChain-Forensics-Pipeline.git](https://github.com/trucvyvo10-design/Bitcoin-AML-OnChain-Forensics-Pipeline.git)
-cd Bitcoin-AML-OnChain-Forensics-Pipeline
-pip install -r requirements.txt
-python3 -m streamlit run 04_Python_Automation/app_risk_dashboard.py
-```
+├── 01_Dashboard_App/
+│   └── app_risk_dashboard.py           <- Interactive Streamlit AML Risk Dashboard
+├── 02_Analytics_Scripts/
+│   └── generate_compliance_chart.py    <- Automated chart generator for Compliance Tuning
+├── 03_Forensics_Notebooks/
+│   └── bitcoin_aml_forensics.py       <- Temporal split, RF training & evaluation pipeline
+└── docs/
+    └── alert_precision_threshold_curve.png <- Generated compliance threshold optimization chart
