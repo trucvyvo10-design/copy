@@ -69,3 +69,26 @@ Bitcoin-AML-OnChain-Forensics-Pipeline/
 │   └── bitcoin_aml_forensics.py       <- Temporal split, RF training & evaluation pipeline
 └── docs/
     └── alert_precision_threshold_curve.png <- Generated compliance threshold optimization chart
+```
+
+## Live Dashboard & Deployment
+
+The interactive dashboard is deployed via Streamlit Community Cloud:
+* **Alert Investigation Queue:** Filtered by customizable Risk Score cutoffs.
+* **Graph Topology Metrics:** Inbound/Outbound degree attributes per transaction node.
+* **Operational Capacity Slider:** Adjust alert thresholds dynamically to match daily compliance audit limits.
+
+### Local Installation & Running Guide
+
+# 1. Clone the repository
+git clone [https://github.com/trucvyvo10-design/copy.git](https://github.com/trucvyvo10-design/copy.git)
+cd copy
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Generate Compliance Tuning Chart
+python3 02_Analytics_Scripts/generate_compliance_chart.py
+
+# 4. Run Streamlit Interactive Dashboard
+python3 -m streamlit run 01_Dashboard_App/app_risk_dashboard.py
